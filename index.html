@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Consumo de tu hogar</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h2>Calculadora de Consumo Eléctrico de tu Hogar</h2>
+
+<label for="artefacto">Seleccione un artefacto:</label>
+<select id="artefacto">
+    <option value="1013">Aire acondicionado de 2200 frigorías F/C</option>
+    <option value="1613">Aire acondicionado de 3500 frigorías F/C</option>
+    <option value="2153">Aire acondicionado de 4500 frigorías F/C</option>
+    <option value="658">Aire acondicionado de 2200 frigorías F/C - Inverter</option>
+    <option value="1048">Aire acondicionado de 3500 frigorías F/C - Inverter</option>
+    <option value="1365">Aire acondicionado de 4500 frigorías F/C - Inverter</option>
+    <option value="380">Bomba de agua de 1/2 HP</option>
+    <option value="570">Bomba de agua de 3/4 HP</option>
+    <option value="5">Cargador de celular genérico</option>
+    <option value="200">Computadora (sólo la CPU)</option>
+    <option value="1500">Estufa halógena de 3 velas c/termostato</option>
+    <option value="1500">Estufa de cuarzo c/termostato</option>
+    <option value="113">Freezer</option>
+    <option value="75">Heladera</option>
+    <option value="90">Heladera con freezer</option>
+    <option value="35">Heladera con freezer - Inverter</option>
+    <option value="11">Lámpara de bajo consumo de 11W</option>
+    <option value="15">Lámpara de bajo consumo de 15W</option>
+    <option value="20">Lámpara de bajo consumo de 20W</option>
+    <option value="100">Lámpara halógena de 100 W</option>
+    <option value="40">Lámpara halógena de 40 W</option>
+    <option value="60">Lámpara halógena de 60 W</option>
+    <option value="5">Lámpara LED de 5 W</option>
+    <option value="9">Lámpara LED de 9 W</option>
+    <option value="11">Lámpara LED de 11 W</option>
+    <option value="875">Lavarropas automático de 5 kg con calentamiento de agua</option>
+    <option value="175">Lavarropas automático de 5 kg</option>
+    <option value="80">Lavarropas semi-automático de 5 kg</option>
+    <option value="640">Microondas</option>
+    <option value="22">Notebook</option>
+    <option value="2000">Pava eléctrica de 1,7 litros</option>
+    <option value="950">Secarropas a calor</option>
+    <option value="380">Secarropas centrífugo</option>
+    <option value="175">Televisor color de tubo fluorescente de 29" a 34"</option>
+    <option value="180">Televisor LED de 40"</option>
+    <option value="40">Televisor LED 24"</option>
+    <option value="90">Televisor LED 32" a 50''</option>
+    <option value="1500">Termotanque eléctrico c/termostato</option>
+    <option value="18">Tubo fluorescente de 18 W</option>
+    <option value="36">Tubo fluorescente de 36 W</option>
+    <option value="58">Tubo fluorescente de 58 W</option>
+    <option value="60">Ventilador de techo</option>
+    <option value="90">Ventilador de pie</option>
+</select>
+
+<label for="cantidad">Cantidad:</label>
+<input type="number" id="cantidad" value="1">
+<button onclick="agregarArtefacto()">Agregar</button>
+
+<table id="tabla">
+    <thead>
+        <tr>
+            <th>Artefacto</th>
+            <th>Consumo por hora (W)</th>
+            <th>Cantidad</th>
+            <th>Consumo por hora total (W)</th>
+            <th>Horas de uso</th>
+            <th>Consumo por día (Wh)</th>
+            <th>Eliminar</th>
+        </tr>
+    </thead>
+    <tbody id="tbody">
+    </tbody>
+</table>
+
+<button onclick="calcular()">Calcular</button>
+
+<p id="resultado"></p>
+<div id="sumaPorHora"></div>
+<div id="sumaPorDia"></div>
+
+<!-- Formulario para agregar artefacto faltante -->
+<h2>Decinos que artefacto no encuentras en la lista</h2>
+<form id="formulario" onsubmit="enviarDatos(event)">
+    <label for="artefactoFaltante">Artefacto Faltante:</label>
+    <input type="text" id="artefactoFaltante" required>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" required>
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+    <label for="edad">Edad:</label>
+    <input type="number" id="edad" required>
+    <button type="submit">Enviar</button>
+</form>
+
+<script src="main.js"></script>
+
+</body>
+</html>
